@@ -1,0 +1,22 @@
+# This file is used by the gn meta-buildsystem find the root of the source tree
+# and to set startup options.
+
+# The location of the build configuration file.
+buildconfig = "//build/config/BUILDCONFIG.gn"
+
+# The secondary source root is a parallel directory tree where
+# GN build files are placed when they can not be placed directly
+# in the source tree, e.g. for third party source trees.
+secondary_source = "//build/secondary/"
+
+# Override the default script executable to always be python3.
+script_executable = "python3"
+
+default_args = {
+  # fuchsia::io::InotifyWatchMask has been deprecated in 12 and removed in 13
+  # right before the current version (12.20230418.0.1) we are using.
+  # https://fxrev.dev/836377.
+  # So explicitly marking fuchsia_target_api_level to 11 to workaround it
+  # temporarily.
+  fuchsia_target_api_level = 11
+}
