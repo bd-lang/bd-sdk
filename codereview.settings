@@ -1,0 +1,6 @@
+# This file is used by gcl to get repository specific information.
+GERRIT_HOST: True
+CODE_REVIEW_SERVER: https://bd-review.googlesource.com
+VIEW_VC: https://bdlang.khulnasoft.com/sdk/+
+CC_LIST: bdlang@khulnasoft.com
+USE_PYTHON3: True
